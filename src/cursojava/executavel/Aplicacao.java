@@ -27,7 +27,6 @@ public class Aplicacao {
 			disciplina.setNota(Double.valueOf(notaDisciplina));
 
 			aluno.getDisciplinas().add(disciplina);
-
 		}
 
 		System.out.println(aluno.toString());

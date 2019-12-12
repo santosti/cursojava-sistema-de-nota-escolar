@@ -61,16 +61,17 @@ public class Aluno {
 		this.nota = nota;
 	}
 
-	//Percorre a lista de objetos, soma a nota das materias e atribui a variavel somaNota.
+	// Percorre a lista de objetos, soma a nota das materias e atribui a variavel
+	// somaNota.
 	public double getMediaAluno() {
 		double somaNotas = 0.0;
 		for (Disciplina disc : disciplinas) {
 			somaNotas += disc.getNota();
 		}
-		return somaNotas/ disciplinas.size(); // size() retorna a quantidade existente dinamicamente.
+		return somaNotas / disciplinas.size(); // size() retorna a quantidade existente dinamicamente.
 	}
-	
-	//Condição de aprovado e reprovado.
+
+	// Condição de aprovado e reprovado.
 	public boolean getResultado() {
 		double media = this.getMediaAluno();
 
