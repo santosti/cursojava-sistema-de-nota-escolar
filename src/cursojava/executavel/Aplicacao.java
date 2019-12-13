@@ -28,6 +28,13 @@ public class Aplicacao {
 
 			aluno.getDisciplinas().add(disciplina);
 		}
+		
+		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina? ");
+		
+		if(escolha == 0) {
+			String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina 1, 2, 3 ou 4 ? ");
+			aluno.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() -1);
+		}
 
 		System.out.println(aluno.toString());
 		System.out.println("Média do Aluno: " + aluno.getMediaAluno());

@@ -19,6 +19,8 @@ public class Disciplina {
 	public void setDisciplinas(String disciplina) {
 		this.disciplina = disciplina;
 	}
+	
+	
 
 	@Override
 	public String toString() {
