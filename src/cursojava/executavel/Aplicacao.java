@@ -28,12 +28,18 @@ public class Aplicacao {
 
 			aluno.getDisciplinas().add(disciplina);
 		}
-		
+
 		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina? ");
-		
-		if(escolha == 0) {
-			String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina 1, 2, 3 ou 4 ? ");
-			aluno.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() -1);
+		// Opção 0 é sim, opção 1 é não
+		if (escolha == 0) {
+			int continuarRemover = 0;
+			int posicao = 1;
+			while (continuarRemover == 0) {
+				String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina 1, 2, 3 ou 4 ? ");
+				aluno.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() - posicao);
+				posicao++;
+				continuarRemover = JOptionPane.showConfirmDialog(null, "Continuar a remover? ");
+			}
 		}
 
 		System.out.println(aluno.toString());
