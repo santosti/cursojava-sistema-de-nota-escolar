@@ -38,7 +38,7 @@ public class Aplicacao {
 
 		System.out.println(aluno.toString());
 		System.out.println("Média do Aluno: " + aluno.getMediaAluno());
-		System.out.println("Resultado: " + (aluno.getResultado() ? "Aluno aprovado" : "Aluno reprovado"));
+		System.out.println("Resultado: " + (aluno.getResultado2()));
 
 	}
 

@@ -82,6 +82,20 @@ public class Aluno {
 		}
 	}
 
+	public String getResultado2() {
+		double media = this.getMediaAluno();
+
+		if (media >= 50) {
+			if (media >= 70) {
+				return "Aluno está aprovado";
+			} else {
+				return "Aluno está em recuperação";
+			}
+		} else {
+			return "Aluno está reprovado";
+		}
+	}
+
 	@Override
 	public String toString() {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + "]";
