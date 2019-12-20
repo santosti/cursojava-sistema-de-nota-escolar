@@ -26,11 +26,11 @@ public class Aplicacao {
 			aluno.setIdade(Integer.valueOf(idade));
 //			aluno.setDataNascimento(dataNascimento);
 
-			for (int i = 1; i <= 4; i++) {
+			for (int i = 1; i <= 3; i++) {
 				String nomeDisciplina = JOptionPane.showInputDialog("Informe a disciplina " + i + ": ");
 				String notaDisciplina = JOptionPane.showInputDialog("Informe a nota " + i + ": ");
 				Disciplina disciplina = new Disciplina();
-				disciplina.setDisciplinas(nomeDisciplina);
+				disciplina.setDisciplina(nomeDisciplina);
 				disciplina.setNota(Double.valueOf(notaDisciplina));
 
 				aluno.getDisciplinas().add(disciplina);
@@ -52,16 +52,19 @@ public class Aplicacao {
 			alunos.add(aluno);
 		}
 
-		for (Aluno aluno : alunos) {
-			if (aluno.getNome().equalsIgnoreCase("Simone")) { //Procura aluno na lista e para a execução.
-				System.out.println(aluno.toString());
-				System.out.println("Média do Aluno: " + aluno.getMediaAluno());
-				System.out.println("Resultado: " + (aluno.getResultado2()));
-				System.out.println("----------------------------------------------------------------");
-				break;
+		for (int pos = 0; pos < alunos.size(); pos++) {
+			Aluno aluno = alunos.get(pos); // Interação com os objetos a partir das posições.
+			System.out.println("Aluno(a) = " + aluno.getNome());
+			System.out.println("Média do aluno(a) = " + aluno.getMediaAluno());
+			System.out.println("Resultado = " + aluno.getResultado2());
+			
+			//Percorre a lista de disciplinas por posições.
+			for(int posd = 0; posd < aluno.getDisciplinas().size(); posd ++) {
+				Disciplina disc = aluno.getDisciplinas().get(posd);
+				System.out.println("Disciplina = " + disc.getDisciplina() + " -- Nota = " + disc.getNota());
 			}
+			System.out.println("-------------------------------------------------");
 		}
 
 	}
-
 }

@@ -61,8 +61,7 @@ public class Aluno {
 		this.nota = nota;
 	}
 
-	// Percorre a lista de objetos, soma a nota das materias e atribui a variavel
-	// somaNota.
+	// Percorre a lista de objetos, soma a nota das disciplinas e atribui a variavel somaNota.
 	public double getMediaAluno() {
 		double somaNotas = 0.0;
 		for (Disciplina disc : disciplinas) {

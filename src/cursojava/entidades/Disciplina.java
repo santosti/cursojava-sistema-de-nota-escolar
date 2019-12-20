@@ -12,11 +12,11 @@ public class Disciplina {
 		this.nota = nota;
 	}
 
-	public String getDisciplinas() {
+	public String getDisciplina() {
 		return disciplina;
 	}
 
-	public void setDisciplinas(String disciplina) {
+	public void setDisciplina(String disciplina) {
 		this.disciplina = disciplina;
 	}
 	
