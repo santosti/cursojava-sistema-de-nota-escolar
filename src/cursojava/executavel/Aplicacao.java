@@ -14,17 +14,17 @@ public class Aplicacao {
 
 		List<Aluno> alunos = new ArrayList<>();
 
-		for (int qtd = 0; qtd <= 2; qtd++) {
+		for (int qtd = 1; qtd <= 2; qtd++) {
 
 			Aluno aluno = new Aluno();
 
-			String nome = JOptionPane.showInputDialog("Informe o nome: ");
+			String nome = JOptionPane.showInputDialog("Informe o nome " + qtd + ": ");
 			String idade = JOptionPane.showInputDialog("Informe a idade: ");
-			String dataNascimento = JOptionPane.showInputDialog("Informe a data de nascimento: ");
+//			String dataNascimento = JOptionPane.showInputDialog("Informe a data de nascimento: ");
 
 			aluno.setNome(nome);
 			aluno.setIdade(Integer.valueOf(idade));
-			aluno.setDataNascimento(dataNascimento);
+//			aluno.setDataNascimento(dataNascimento);
 
 			for (int i = 1; i <= 4; i++) {
 				String nomeDisciplina = JOptionPane.showInputDialog("Informe a disciplina " + i + ": ");
@@ -51,12 +51,15 @@ public class Aplicacao {
 
 			alunos.add(aluno);
 		}
-		
+
 		for (Aluno aluno : alunos) {
-			System.out.println(aluno.toString());
-			System.out.println("Média do Aluno: " + aluno.getMediaAluno());
-			System.out.println("Resultado: " + (aluno.getResultado2()));
-			System.out.println("----------------------------------------------------------------");
+			if (aluno.getNome().equalsIgnoreCase("Simone")) { //Procura aluno na lista e para a execução.
+				System.out.println(aluno.toString());
+				System.out.println("Média do Aluno: " + aluno.getMediaAluno());
+				System.out.println("Resultado: " + (aluno.getResultado2()));
+				System.out.println("----------------------------------------------------------------");
+				break;
+			}
 		}
 
 	}
