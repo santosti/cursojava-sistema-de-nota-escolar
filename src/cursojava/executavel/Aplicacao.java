@@ -26,7 +26,7 @@ public class Aplicacao {
 			aluno.setIdade(Integer.valueOf(idade));
 //			aluno.setDataNascimento(dataNascimento);
 
-			for (int i = 1; i <= 3; i++) {
+			for (int i = 1; i <= 1; i++) {
 				String nomeDisciplina = JOptionPane.showInputDialog("Informe a disciplina " + i + ": ");
 				String notaDisciplina = JOptionPane.showInputDialog("Informe a nota " + i + ": ");
 				Disciplina disciplina = new Disciplina();
@@ -54,6 +54,21 @@ public class Aplicacao {
 
 		for (int pos = 0; pos < alunos.size(); pos++) {
 			Aluno aluno = alunos.get(pos); // Interação com os objetos a partir das posições.
+			
+			if(aluno.getNome().equalsIgnoreCase("simone")) {
+				Aluno trocar = new Aluno();
+				trocar.setNome("Aluno trocado! ");
+				
+				Disciplina disciplina = new Disciplina();
+				disciplina.setDisciplina("Matématica");
+				disciplina.setNota(98);
+				
+				trocar.getDisciplinas().add(disciplina);
+				
+				alunos.set(pos, trocar);
+				aluno = alunos.get(pos);
+				
+			}
 			System.out.println("Aluno(a) = " + aluno.getNome());
 			System.out.println("Média do aluno(a) = " + aluno.getMediaAluno());
 			System.out.println("Resultado = " + aluno.getResultado2());
