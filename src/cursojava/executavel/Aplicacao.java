@@ -34,7 +34,7 @@ public class Aplicacao {
 			aluno.setNome(nome);
 			aluno.setIdade(Integer.valueOf(idade));
 
-			for (int i = 1; i <= 1; i++) {
+			for (int i = 1; i <= 4; i++) {
 				String nomeDisciplina = JOptionPane.showInputDialog("Informe a disciplina " + i + ": ");
 				String notaDisciplina = JOptionPane.showInputDialog("Informe a nota " + i + ": ");
 				Disciplina disciplina = new Disciplina();
