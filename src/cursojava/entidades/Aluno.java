@@ -8,7 +8,6 @@ import cursojava.constantes.StatusAluno;
 public class Aluno {
 	public String nome;
 	public int idade;
-	private String dataNascimento;
 	private double nota;
 
 	private List<Disciplina> disciplinas = new ArrayList<>();
@@ -16,11 +15,11 @@ public class Aluno {
 	public Aluno() {
 	}
 
-	public Aluno(String nome, int idade, String dataNascimento) {
+	public Aluno(String nome, int idade) {
 		super();
 		this.nome = nome;
 		this.setIdade(idade);
-		this.dataNascimento = dataNascimento;
+	
 	}
 
 	public List<Disciplina> getDisciplinas() {
@@ -45,14 +44,6 @@ public class Aluno {
 
 	public void setIdade(int idade) {
 		this.idade = idade;
-	}
-
-	public String getDataNascimento() {
-		return dataNascimento;
-	}
-
-	public void setDataNascimento(String dataNascimento) {
-		this.dataNascimento = dataNascimento;
 	}
 
 	public double getNota() {
@@ -88,7 +79,7 @@ public class Aluno {
 
 		if (media >= 50) {
 			if (media >= 70) {
-				return StatusAluno.APROVADO ;
+				return StatusAluno.APROVADO;
 			} else {
 				return StatusAluno.RECUPERACAO;
 			}
@@ -99,14 +90,13 @@ public class Aluno {
 
 	@Override
 	public String toString() {
-		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + "]";
+		return "Aluno [nome=" + nome + ", idade=" + idade + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((dataNascimento == null) ? 0 : dataNascimento.hashCode());
 		result = prime * result + ((disciplinas == null) ? 0 : disciplinas.hashCode());
 		result = prime * result + idade;
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
@@ -125,11 +115,6 @@ public class Aluno {
 		if (getClass() != obj.getClass())
 			return false;
 		Aluno other = (Aluno) obj;
-		if (dataNascimento == null) {
-			if (other.dataNascimento != null)
-				return false;
-		} else if (!dataNascimento.equals(other.dataNascimento))
-			return false;
 		if (disciplinas == null) {
 			if (other.disciplinas != null)
 				return false;

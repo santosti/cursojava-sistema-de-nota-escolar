@@ -13,22 +13,26 @@ import cursojava.entidades.Disciplina;
 public class Aplicacao {
 
 	public static void main(String[] args) {
-
+		
+		String login = JOptionPane.showInputDialog("Informe o login: ");
+		String senha = JOptionPane.showInputDialog("Informe a senha: ");
+		
+		if(login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("admin"))  {
+		
 		List<Aluno> alunos = new ArrayList<>();
+		
 		// HashMap é uma lista que utiliza chave e valor.
 		HashMap<String, List<Aluno>> maps = new HashMap<>();
 
-		for (int qtd = 1; qtd <= 5; qtd++) {
+		for (int qtd = 1; qtd <= 4; qtd++) {
 
 			Aluno aluno = new Aluno();
 
 			String nome = JOptionPane.showInputDialog("Informe o nome " + qtd + ": ");
 			String idade = JOptionPane.showInputDialog("Informe a idade: ");
-//			String dataNascimento = JOptionPane.showInputDialog("Informe a data de nascimento: ");
 
 			aluno.setNome(nome);
 			aluno.setIdade(Integer.valueOf(idade));
-//			aluno.setDataNascimento(dataNascimento);
 
 			for (int i = 1; i <= 1; i++) {
 				String nomeDisciplina = JOptionPane.showInputDialog("Informe a disciplina " + i + ": ");
@@ -41,7 +45,8 @@ public class Aplicacao {
 			}
 
 			int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina? ");
-			// Opção 0 é sim, opção 1 é não
+			// Opção 0 é sim, opção 1 é não.
+			
 			if (escolha == 0) {
 				int continuarRemover = 0;
 				int posicao = 1;
@@ -87,5 +92,5 @@ public class Aplicacao {
 		}
 
 	}
-
+}
 }
