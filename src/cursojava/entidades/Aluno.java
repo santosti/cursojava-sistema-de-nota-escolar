@@ -5,21 +5,17 @@ import java.util.List;
 
 import cursojava.constantes.StatusAluno;
 
-public class Aluno {
-	public String nome;
-	public int idade;
+public class Aluno extends Pessoa {
+
 	private double nota;
 
 	private List<Disciplina> disciplinas = new ArrayList<>();
 
-	public Aluno() {
+	public Aluno(String nome, int idade, String dataNasc, String cpf, String nomeMae, String nomePai) {
+		super(nome, idade, dataNasc, cpf, nomeMae, nomePai);
 	}
 
-	public Aluno(String nome, int idade) {
-		super();
-		this.nome = nome;
-		this.setIdade(idade);
-	
+	public Aluno() {
 	}
 
 	public List<Disciplina> getDisciplinas() {
