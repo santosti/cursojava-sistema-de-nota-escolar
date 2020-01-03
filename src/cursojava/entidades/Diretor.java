@@ -34,4 +34,25 @@ public class Diretor extends Pessoa {
 		this.titulacao = titulacao;
 	}
 
+	@Override
+	public String toString() {
+		return "Diretor [registroEduc=" + registroEduc + ", tempoDirecao=" + tempoDirecao + ", titulacao=" + titulacao
+				+ ", nome=" + nome + ", idade=" + idade + ", dataNasc=" + dataNasc + ", cpf=" + cpf + ", nomeMae="
+				+ nomeMae + ", nomePai=" + nomePai + "]";
+	}
+	
+	@Override
+	public boolean restricaoIdade() {
+		return idade >= 40;
+	}
+	
+	public String msg() {
+		return this.restricaoIdade() ? "Parabéns você é maior de idade" : "Que pena você não é maior de idade";
+	}
+
+	@Override
+	public double salario() {
+		return 5000.23;
+	}
+
 }

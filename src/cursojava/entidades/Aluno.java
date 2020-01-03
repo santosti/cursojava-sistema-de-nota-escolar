@@ -86,7 +86,8 @@ public class Aluno extends Pessoa {
 
 	@Override
 	public String toString() {
-		return "Aluno [nome=" + nome + ", idade=" + idade + "]";
+		return "Aluno [nota=" + nota + ", disciplinas=" + disciplinas + ", nome=" + nome + ", idade=" + idade
+				+ ", dataNasc=" + dataNasc + ", cpf=" + cpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + "]";
 	}
 
 	@Override
@@ -126,6 +127,19 @@ public class Aluno extends Pessoa {
 		if (Double.doubleToLongBits(nota) != Double.doubleToLongBits(other.nota))
 			return false;
 		return true;
+	}
+	
+	@Override
+	public boolean restricaoIdade() {
+		return idade <= 18;
+	}
+	public String msg() {
+		return this.restricaoIdade() ? "Parabéns você é maior de idade" : "Que pena você não é maior de idade";
+	}
+
+	@Override
+	public double salario() {
+		return 700.00;
 	}
 
 }

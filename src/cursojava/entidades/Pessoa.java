@@ -1,6 +1,6 @@
 package cursojava.entidades;
 
-public class Pessoa {
+public abstract class Pessoa {
 	protected String nome;
 	protected  int idade;
 	protected  String dataNasc;
@@ -21,6 +21,8 @@ public class Pessoa {
 		this.nomePai = nomePai;
 	}
 
+	public abstract double salario();
+	
 	public String getNome() {
 		return nome;
 	}
@@ -67,6 +69,13 @@ public class Pessoa {
 
 	public void setNomePai(String nomePai) {
 		this.nomePai = nomePai;
+	}
+	
+	
+	
+	public boolean restricaoIdade() {
+		
+		return idade >= 18;
 	}
 
 }
