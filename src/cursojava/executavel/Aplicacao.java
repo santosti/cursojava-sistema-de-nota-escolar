@@ -6,8 +6,10 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import cursojava.classesAuxiliares.MetodoAutenticar;
 import cursojava.constantes.StatusAluno;
 import cursojava.entidades.Aluno;
+import cursojava.entidades.Diretor;
 import cursojava.entidades.Disciplina;
 import cursojava.entidades.Secretario;
 
@@ -17,9 +19,10 @@ public class Aplicacao {
 
 		String usuario = JOptionPane.showInputDialog("Informe o usuario: ");
 		String senha = JOptionPane.showInputDialog("Informe a senha: ");
-
-		if (new Secretario().autenticar(usuario, senha)) {
-
+		
+		//Amarração de autenticação do sistema.
+		if (new MetodoAutenticar(new Diretor(usuario, senha)).autenticarSistema() || new MetodoAutenticar(new Secretario(usuario, senha)).autenticarSistema()) {
+			
 			List<Aluno> alunos = new ArrayList<>();
 
 			// HashMap é uma lista que utiliza chave e valor.

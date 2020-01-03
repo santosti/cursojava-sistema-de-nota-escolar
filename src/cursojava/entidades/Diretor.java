@@ -1,13 +1,22 @@
 package cursojava.entidades;
 
-public class Diretor extends Pessoa {
+import cursojava.interfaces.PermitirAcesso;
+
+public class Diretor extends Pessoa implements PermitirAcesso {
 
 	private int registroEduc;
 	private int tempoDirecao;
 	private String titulacao;
 
+	private String usuario;
+	private String senha;
+
 	public Diretor() {
-		super();
+	}
+
+	public Diretor(String usuario, String senha) {
+		this.usuario = usuario;
+		this.senha = senha;
 	}
 
 	public Diretor(String nome, int idade, String dataNasc, String cpf, String nomeMae, String nomePai) {
@@ -40,12 +49,12 @@ public class Diretor extends Pessoa {
 				+ ", nome=" + nome + ", idade=" + idade + ", dataNasc=" + dataNasc + ", cpf=" + cpf + ", nomeMae="
 				+ nomeMae + ", nomePai=" + nomePai + "]";
 	}
-	
+
 	@Override
 	public boolean restricaoIdade() {
 		return idade >= 40;
 	}
-	
+
 	public String msg() {
 		return this.restricaoIdade() ? "Parabéns você é maior de idade" : "Que pena você não é maior de idade";
 	}
@@ -53,6 +62,18 @@ public class Diretor extends Pessoa {
 	@Override
 	public double salario() {
 		return 5000.23;
+	}
+
+	@Override
+	public boolean autenticar(String usuario, String senha) {
+		this.usuario = usuario;
+		this.senha = senha;
+		return autenticar();
+	}
+
+	@Override
+	public boolean autenticar() {
+		return usuario.equals("diretor") && senha.equals("admin");
 	}
 
 }
