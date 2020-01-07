@@ -3,5 +3,8 @@ Exercicio de orientação a objetos.
 
 Sistema de calculo de notas escolares rodando no console.
 
-(usuario: admin)
+(usuario: diretor)
+(senha: admin)
+
+(usuario: secretario)
 (senha: admin)
