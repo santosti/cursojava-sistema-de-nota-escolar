@@ -70,9 +70,7 @@ public abstract class Pessoa {
 	public void setNomePai(String nomePai) {
 		this.nomePai = nomePai;
 	}
-	
-	
-	
+
 	public boolean restricaoIdade() {
 		
 		return idade >= 18;
