@@ -49,7 +49,7 @@ public class Aplicacao {
 						String notaDisciplina = JOptionPane.showInputDialog("Informe a nota " + i + ": ");
 						Disciplina disciplina = new Disciplina();
 						disciplina.setDisciplina(nomeDisciplina);
-						disciplina.setNota(Double.valueOf(notaDisciplina));
+						//disciplina.setNota(Double.valueOf(notaDisciplina));
 
 						aluno.getDisciplinas().add(disciplina);
 					}
